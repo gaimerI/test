@@ -1,5 +1,5 @@
 // URL of the server providing usernames and comments
-const connectAddress = 'https://example.com/api/comments';
+const connectAddress = 'https://gaimeri17-supportivebrownleopard.web.val.run';
 
 // Function to fetch and display comments
 async function fetchComments() {
