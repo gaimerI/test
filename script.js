@@ -1,24 +1,34 @@
 (function(Scratch) {
-'use strict';
-class Extension {
-getInfo() {
-return {
-id: "johnMyExtension",
-name: "My Extension",
-blocks: [
-{
-opcode: 'logToConsole',
-text: 'log to console',
-blockType: Scratch.BlockType.COMMAND
-}
-]
-};
-}
+  'use strict';
+  class Extension {
+    getInfo() {
+      return {
+        id: "gaimeriMyExtension",
+        name: "My Extension",
+        blocks: [
+          {
+            opcode: 'logToConsole',
+            text: 'log to console',
+            blockType: Scratch.BlockType.COMMAND
+          },
+          {
+            opcode: 'testReporter',
+            text: 'testing!',
+            blockType: Scratch.BlockType.REPORTER,
+            disableMonitor: true,
+	    allowDropAnywhere: true
+          }
+        ]
+      };
+    }
 
-logToConsole() {
-alert('Hello world!');
-}
-}
+    logToConsole() {
+      console.log('Hello world!');
+    }
+    testReporter() {
+      return "Hello world!";
+    }
+  }
 
-Scratch.extensions.register(new Extension());
+  Scratch.extensions.register(new Extension());
 })(Scratch);
