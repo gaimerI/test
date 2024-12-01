@@ -16,7 +16,7 @@ blockType: Scratch.BlockType.COMMAND
 }
 
 logToConsole() {
-console.log('Hello world!');
+alert('Hello world!');
 }
 }
 
