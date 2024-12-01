@@ -3,7 +3,7 @@
   class Extension {
     getInfo() {
       return {
-        id: "gaimeriMyExtension",
+        id: "johnMyExtension",
         name: "My Extension",
         blocks: [
           {
