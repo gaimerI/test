@@ -81,6 +81,7 @@ footer {
   background-repeat: no-repeat; /* Prevents tiling */
   background-position: center; /* Centers the image */
   vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
 }
 
 .glyph-shield-add {
@@ -92,6 +93,7 @@ footer {
   background-repeat: no-repeat; /* Prevents tiling */
   background-position: center; /* Centers the image */
   vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
 }
 
 .glyph-shield-loading {
@@ -103,6 +105,7 @@ footer {
   background-repeat: no-repeat; /* Prevents tiling */
   background-position: center; /* Centers the image */
   vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
 }
 
 .glyph-shield-lock {
@@ -114,6 +117,7 @@ footer {
   background-repeat: no-repeat; /* Prevents tiling */
   background-position: center; /* Centers the image */
   vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
 }
 
 .glyph-shield-lock-add {
@@ -125,4 +129,17 @@ footer {
   background-repeat: no-repeat; /* Prevents tiling */
   background-position: center; /* Centers the image */
   vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
+}
+
+.glyph-delete {
+  display: inline-block; /* Makes it inline, like a character */
+  width: 1em; /* Matches the font size of the text */
+  height: 1em; /* Maintains the aspect ratio with font size */
+  background-image: url('images/delete.png'); /* Replace with your image URL */
+  background-size: contain; /* Scales image to fit within the element */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center; /* Centers the image */
+  vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
 }
