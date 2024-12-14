@@ -72,6 +72,11 @@ footer {
     color: white;
 }
 
-  .glyph {
-    border-style: solid;
-  }
+.glyph {
+    width: 1em; /* Adjust width to match font size */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align with text */
+    display: inline-block; /* Make it behave like text */
+    /* Optional: Add some margin or padding */
+    margin: 0 0.1em; /* Space around the glyph */
+}
