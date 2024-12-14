@@ -73,9 +73,5 @@ footer {
 }
 
   .glyph {
-    width: 1em;
-    height: auto;
-    vertical-align: middle;
-    display: inline-block;
-    margin: 0 0.1em;
+    border-style: solid;
   }
