@@ -72,7 +72,7 @@ footer {
     color: white;
 }
 
-.glyph {
+.glyph-person {
   display: inline-block; /* Makes it inline, like a character */
   width: 1em; /* Matches the font size of the text */
   height: 1em; /* Maintains the aspect ratio with font size */
