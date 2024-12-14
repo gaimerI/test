@@ -71,3 +71,11 @@ footer {
     background: #333;
     color: white;
 }
+
+  .glyph {
+    width: 1em;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0.1em;
+  }
