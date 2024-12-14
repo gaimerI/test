@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${topic.title}</h3>
                 <p>${topic.content}</p>
                 <button onclick="viewTopic(${index})">View Topic</button>
-                <button onclick="deleteTopic(${index})">Delete</button>
+                <button onclick="deleteTopic(${index})"><span class=\"glyph-shield-lock-add\"></span></button>
             `;
             topicList.appendChild(li);
         });
