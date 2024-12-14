@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const topics = [
-        { title: "Welcome to the Forum!", content: "Feel free to introduce yourself and get to know other members." },
-        { title: "JavaScript Tips and Tricks", content: "Share your favorite JavaScript tips or ask for advice here." },
-        { title: "General Discussion", content: "Talk about anything that doesn't fit into other categories." },
-    ];
+    let topics = [];
     const topicList = document.getElementById("topic-list");
     const newTopicForm = document.getElementById("new-topic-form");
     const topicTitle = document.getElementById("topic-title");
     const topicContent = document.getElementById("topic-content");
+
+    // Fetch topics from JSON file
+    async function fetchTopics() {
+        try {
+            const response = await fetch("topics.json");
+            if (!response.ok) throw new Error("Failed to load topics.json");
+            topics = await response.json();
+            renderTopics();
+        } catch (error) {
+            console.error("Error fetching topics:", error);
+        }
+    }
 
     // Render topics
     function renderTopics() {
@@ -43,11 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
         renderTopics();
     };
 
-    // View topic (for future expansion)
+    // View topic
     window.viewTopic = function (index) {
         alert(`Viewing Topic:\n\n${topics[index].title}\n\n${topics[index].content}`);
     };
 
-    // Render initial sample topics
-    renderTopics();
+    // Load topics from JSON file
+    fetchTopics();
 });
