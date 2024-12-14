@@ -13,6 +13,6 @@
     },
     {
         "title": "Sample Glyph",
-        "content": "Here is a glyph: <span class=\"glyph\"><img src=\"images/person.png\" alt=\"Glyph\" /></span> and some text."
+        "content": "Here is a glyph: <span class=\"glyph-person\"></span> and some text."
     }
 ]
