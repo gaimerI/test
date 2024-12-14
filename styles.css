@@ -73,10 +73,12 @@ footer {
 }
 
 .glyph {
-    width: 1em; /* Adjust width to match font size */
-    height: auto; /* Maintain aspect ratio */
-    vertical-align: middle; /* Align with text */
-    display: inline-block; /* Make it behave like text */
-    /* Optional: Add some margin or padding */
-    margin: 0 0.1em; /* Space around the glyph */
+  display: inline-block; /* Makes it inline, like a character */
+  width: 1em; /* Matches the font size of the text */
+  height: 1em; /* Maintains the aspect ratio with font size */
+  background-image: url('path-to-your-image.png'); /* Replace with your image URL */
+  background-size: contain; /* Scales image to fit within the element */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center; /* Centers the image */
+  vertical-align: middle; /* Aligns it with the baseline of text */
 }
