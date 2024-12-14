@@ -9,6 +9,9 @@
     },
     {
         "title": "General Discussion",
-        "content": "Talk about <strong>anything</strong> that doesn't fit into other categories."
+        "content": "Talk about anything that doesn't fit into other categories."
     }
+    {
+        "title": "Sample Glyph",
+        "content": "Here is a glyph: <span class="glyph"><img src="images/person.png" alt="Glyph" /></span> and some text."
 ]
