@@ -1,6 +1,6 @@
 [
     {
-        "title": "Welcome to the Forum!",
+        "title": "About the Forum",
         "content": "Feel free to introduce yourself and get to know other members."
     },
     {
@@ -9,6 +9,6 @@
     },
     {
         "title": "General Discussion",
-        "content": "Talk about anything that doesn't fit into other categories."
+        "content": "Talk about <strong>anything</strong> that doesn't fit into other categories."
     }
 ]
