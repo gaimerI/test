@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const topics = [];
+    const topics = [
+        { title: "Welcome to the Forum!", content: "Feel free to introduce yourself and get to know other members." },
+        { title: "JavaScript Tips and Tricks", content: "Share your favorite JavaScript tips or ask for advice here." },
+        { title: "General Discussion", content: "Talk about anything that doesn't fit into other categories." },
+    ];
     const topicList = document.getElementById("topic-list");
     const newTopicForm = document.getElementById("new-topic-form");
     const topicTitle = document.getElementById("topic-title");
@@ -43,4 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.viewTopic = function (index) {
         alert(`Viewing Topic:\n\n${topics[index].title}\n\n${topics[index].content}`);
     };
+
+    // Render initial sample topics
+    renderTopics();
 });
