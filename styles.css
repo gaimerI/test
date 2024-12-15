@@ -15,8 +15,7 @@ header {
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
+    width: 100%; /* Use the full width of the viewport */
     padding: 10px;
     background: white;
     border-radius: 8px;
@@ -68,6 +67,7 @@ button:hover {
 }
 
 footer {
+    width: 100%; /* Use the full width of the viewport */
     text-align: center;
     padding: 1rem;
     background: black;
@@ -90,4 +90,41 @@ footer {
 
 #new-topic {
     margin-left: auto; /* Push create new topic to the right */
+}
+
+/* Reusable glyph base styles */
+.glyph {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    filter: invert(1); /* Ensures glyphs are visible on dark backgrounds */
+}
+
+/* Specific glyph styles */
+.glyph-person {
+    background-image: url('images/person.png');
+}
+
+.glyph-shield-add {
+    background-image: url('images/shield-add.png');
+}
+
+.glyph-shield-loading {
+    background-image: url('images/shield-loading.png');
+}
+
+.glyph-shield-lock {
+    background-image: url('images/shield-lock.png');
+}
+
+.glyph-shield-lock-add {
+    background-image: url('images/shield-lock-add.png');
+}
+
+.glyph-delete {
+    background-image: url('images/delete.png');
 }
