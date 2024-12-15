@@ -1,18 +1,22 @@
 [
     {
         "title": "About the Forum",
-        "content": "Feel free to introduce yourself and get to know other members."
+        "content": "Feel free to introduce yourself and get to know other members.",
+        "author": "Admin"
     },
     {
         "title": "JavaScript Tips and Tricks",
-        "content": "Share your favorite JavaScript tips or ask for advice here."
+        "content": "Share your favorite JavaScript tips or ask for advice here.",
+        "author": "Admin"
     },
     {
         "title": "General Discussion",
-        "content": "Talk about anything that doesn't fit into other categories."
+        "content": "Talk about anything that doesn't fit into other categories.",
+        "author": "Admin"
     },
     {
         "title": "Sample Glyph",
-        "content": "Here is a glyph: <span class=\"glyph glyph-shield-lock-add\"></span> and some text."
+        "content": "Here is a glyph: <span class=\"glyph glyph-shield-lock-add\"></span> and some text.",
+        "author": "Admin"
     }
 ]
