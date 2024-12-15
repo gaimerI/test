@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
             li.innerHTML = `
                 <h3>${topic.title}</h3>
                 <p>${topic.content}</p>
+                <hr>
+                <i>${topic.author}</i>
                 <button onclick="viewTopic(${index})">View Topic</button>
                 <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
             `;
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newTopic = {
             title: topicTitle.value,
             content: topicContent.value,
+            author: "Admin",
         };
         topics.push(newTopic);
         topicTitle.value = "";
