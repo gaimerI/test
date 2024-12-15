@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const user = users.find((u) => u.username === username && u.password === password);
             if (user) {
                 loginForm.style.display = 'none';
+                loginButton.style.diplay = 'none';
                 userOverview.style.display = 'block';
                 userNameDisplay.textContent = user.username;
             } else {
@@ -96,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     logoutButton.addEventListener('click', () => {
         userOverview.style.display = 'none';
+        loginButton.style.display = 'block';
         alert("You have logged out.");
     });
 });
