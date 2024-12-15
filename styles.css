@@ -132,3 +132,7 @@ footer {
 .glyph-login {
     background-image: url('images/login.png');
 }
+
+#login-form {
+    display: none; /* Initially hide the form */
+}
