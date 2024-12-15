@@ -5,12 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const topicTitle = document.getElementById("topic-title");
     const topicContent = document.getElementById("topic-content");
 
-    const loginButton = document.getElementById('login-button');
-    const loginForm = document.getElementById('login-form');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const container = document.querySelector('.container');
-
     // Fetch topics from JSON file
     async function fetchTopics() {
         try {
@@ -32,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${topic.title}</h3>
                 <p>${topic.content}</p>
                 <button onclick="viewTopic(${index})">View Topic</button>
-                <button onclick="deleteTopic(${index})"><span class=\"glyph glyph-delete\"></span></button>
+                <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
             `;
             topicList.appendChild(li);
         });
@@ -65,63 +59,43 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load topics from JSON file
     fetchTopics();
 
-    // Fetch users from users.json
-    async function fetchUsers() {
+    // Login functionality
+    const loginButton = document.getElementById('login-button');
+    const loginForm = document.getElementById('login-form');
+    const userOverview = document.getElementById('user-overview');
+    const userNameDisplay = document.getElementById('user-name');
+    const logoutButton = document.getElementById('logout-button');
+
+    loginButton.addEventListener('click', () => {
+        // Toggle visibility of the login form
+        loginForm.style.display = loginForm.style.display === 'block' ? 'none' : 'block';
+    });
+
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
         try {
             const response = await fetch("users.json");
             if (!response.ok) throw new Error("Failed to load users.json");
-            return await response.json();
+            const users = await response.json();
+
+            const user = users.find((u) => u.username === username && u.password === password);
+            if (user) {
+                loginForm.style.display = 'none';
+                userOverview.style.display = 'block';
+                userNameDisplay.textContent = user.username;
+            } else {
+                alert("Invalid username or password!");
+            }
         } catch (error) {
-            console.error("Error fetching users:", error);
-            return [];
-        }
-    }
-
-    // Handle login form visibility toggle
-    loginButton.addEventListener('click', () => {
-        if (loginForm.style.display === 'none' || loginForm.style.display === '') {
-            loginForm.style.display = 'block';
-        } else {
-            loginForm.style.display = 'none';
+            console.error("Error logging in:", error);
         }
     });
 
-    // Handle login
-    loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const username = usernameInput.value;
-        const password = passwordInput.value;
-
-        const users = await fetchUsers();
-        const user = users.find(u => u.username === username && u.password === password);
-
-        if (user) {
-            alert(`Welcome, ${user.username}!`);
-            loginForm.style.display = 'none';
-            displayUserOverview(user);
-        } else {
-            alert("Invalid username or password.");
-        }
+    logoutButton.addEventListener('click', () => {
+        userOverview.style.display = 'none';
+        alert("You have logged out.");
     });
-
-    // Display user overview
-    function displayUserOverview(user) {
-        const userOverview = document.createElement('div');
-        userOverview.id = 'user-overview';
-        userOverview.innerHTML = `
-            <h2>Welcome, ${user.username}</h2>
-            <p>Email: ${user.email || "Not provided"}</p>
-            <p>Member since: ${user.memberSince || "Unknown"}</p>
-            <button id="logout-button">Logout</button>
-        `;
-        container.replaceChild(userOverview, loginForm);
-
-        const logoutButton = userOverview.querySelector("#logout-button");
-        logoutButton.addEventListener("click", () => {
-            userOverview.replaceWith(loginForm);
-            usernameInput.value = '';
-            passwordInput.value = '';
-            alert("Logged out successfully.");
-        });
-    }
 });
