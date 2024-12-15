@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <i>${topic.author}</i>
                 <button onclick="viewTopic(${index})">View Topic</button>
                 <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
-                <button onclick="editTopic(${index})">Edit Topic</button>
-
             `;
             topicList.appendChild(li);
         });
@@ -106,41 +104,3 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("You have logged out.");
     });
 });
-
-document.getElementById('search-bar').addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    const filteredTopics = topics.filter(topic => 
-        topic.title.toLowerCase().includes(query) || 
-        topic.content.toLowerCase().includes(query)
-    );
-    renderFilteredTopics(filteredTopics);
-});
-
-function renderFilteredTopics(filteredTopics = topics) {
-    topicList.innerHTML = "";
-    filteredTopics.forEach((topic, index) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            <h3>${topic.title}</h3>
-            <p>${topic.content}</p>
-            <hr>
-            <i>${topic.author}</i>
-            <button onclick="viewTopic(${index})">View Topic</button>
-            <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
-        `;
-        topicList.appendChild(li);
-    });
-}
-
-window.editTopic = function (index) {
-    const topic = topics[index];
-    topicTitle.value = topic.title;
-    topicContent.value = topic.content;
-    newTopicForm.addEventListener('submit', function updateTopic(e) {
-        e.preventDefault();
-        topic.title = topicTitle.value;
-        topic.content = topicContent.value;
-        renderTopics();
-        newTopicForm.removeEventListener('submit', updateTopic);
-    });
-};
