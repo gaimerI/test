@@ -64,7 +64,6 @@ button:hover {
     border-radius: 4px;
     background: silver;
     color: white;
-    break-inside: avoid;
 }
 
 footer {
@@ -74,80 +73,20 @@ footer {
     color: white;
 }
 
-.glyph-person {
-  display: inline-block; /* Makes it inline, like a character */
-  width: 1em; /* Matches the font size of the text */
-  height: 1em; /* Maintains the aspect ratio with font size */
-  background-image: url('images/person.png'); /* Replace with your image URL */
-  background-size: contain; /* Scales image to fit within the element */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
-  vertical-align: middle; /* Aligns it with the baseline of text */
-  filter: invert(1);
-}
-
-.glyph-shield-add {
-  display: inline-block; /* Makes it inline, like a character */
-  width: 1em; /* Matches the font size of the text */
-  height: 1em; /* Maintains the aspect ratio with font size */
-  background-image: url('images/shield-add.png'); /* Replace with your image URL */
-  background-size: contain; /* Scales image to fit within the element */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
-  vertical-align: middle; /* Aligns it with the baseline of text */
-  filter: invert(1);
-}
-
-.glyph-shield-loading {
-  display: inline-block; /* Makes it inline, like a character */
-  width: 1em; /* Matches the font size of the text */
-  height: 1em; /* Maintains the aspect ratio with font size */
-  background-image: url('images/shield-loading.png'); /* Replace with your image URL */
-  background-size: contain; /* Scales image to fit within the element */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
-  vertical-align: middle; /* Aligns it with the baseline of text */
-  filter: invert(1);
-}
-
-.glyph-shield-lock {
-  display: inline-block; /* Makes it inline, like a character */
-  width: 1em; /* Matches the font size of the text */
-  height: 1em; /* Maintains the aspect ratio with font size */
-  background-image: url('images/shield-lock.png'); /* Replace with your image URL */
-  background-size: contain; /* Scales image to fit within the element */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
-  vertical-align: middle; /* Aligns it with the baseline of text */
-  filter: invert(1);
-}
-
-.glyph-shield-lock-add {
-  display: inline-block; /* Makes it inline, like a character */
-  width: 1em; /* Matches the font size of the text */
-  height: 1em; /* Maintains the aspect ratio with font size */
-  background-image: url('images/shield-lock-add.png'); /* Replace with your image URL */
-  background-size: contain; /* Scales image to fit within the element */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
-  vertical-align: middle; /* Aligns it with the baseline of text */
-  filter: invert(1);
-}
-
-.glyph-delete {
-  display: inline-block; /* Makes it inline, like a character */
-  width: 1em; /* Matches the font size of the text */
-  height: 1em; /* Maintains the aspect ratio with font size */
-  background-image: url('images/delete.png'); /* Replace with your image URL */
-  background-size: contain; /* Scales image to fit within the element */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
-  vertical-align: middle; /* Aligns it with the baseline of text */
-  filter: invert(1);
-}
-
 .container {
-    column-count: 3;
-    column-width: 200px;
-    
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    flex: 1; /* Each column gets an equal width */
+    min-width: 200px;
+}
+
+#topics {
+    margin-right: auto; /* Push topics to the left */
+}
+
+#new-topic {
+    margin-left: auto; /* Push create new topic to the right */
 }
