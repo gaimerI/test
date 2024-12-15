@@ -104,3 +104,28 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("You have logged out.");
     });
 });
+
+document.getElementById('search-bar').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    const filteredTopics = topics.filter(topic => 
+        topic.title.toLowerCase().includes(query) || 
+        topic.content.toLowerCase().includes(query)
+    );
+    renderFilteredTopics(filteredTopics);
+});
+
+function renderFilteredTopics(filteredTopics = topics) {
+    topicList.innerHTML = "";
+    filteredTopics.forEach((topic, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <h3>${topic.title}</h3>
+            <p>${topic.content}</p>
+            <hr>
+            <i>${topic.author}</i>
+            <button onclick="viewTopic(${index})">View Topic</button>
+            <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
+        `;
+        topicList.appendChild(li);
+    });
+}
