@@ -40,7 +40,7 @@ input, textarea, button, input[type="submit"], input[type="reset"] {
     border-radius: 4px;
 }
 
-button, input[type="submit"], input[type="reset" {
+button, input[type="submit"], input[type="reset"] {
     background-color: navy;
     color: white;
     cursor: pointer;
