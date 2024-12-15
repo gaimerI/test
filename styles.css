@@ -33,14 +33,14 @@ form {
     gap: 10px;
 }
 
-input, textarea, button {
+input, textarea, button, input[type="submit"], input[type="reset"] {
     font-size: 1rem;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-button {
+button, input[type="submit"], input[type="reset" {
     background-color: navy;
     color: white;
     cursor: pointer;
