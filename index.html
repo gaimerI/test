@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Simple Forum</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,9 +19,10 @@
             </div>
             <div class="column">
                 <section id="new-topic">
-                    
-                    <h2><span class="glyph glyph-login"></span> Login</h2>
-                    <form>
+                    <h2>
+                        <button id="login-button">Login</button>
+                    </h2>
+                    <form id="login-form">
                         <label for="username">Username:</label>
                         <input type="text" id="username" name="username">
                         
@@ -41,7 +41,6 @@
                 </section>
             </div>
             <div class="column">
-                <!-- Placeholder for future content -->
                 <p>Additional content here...</p>
             </div>
         </div>
