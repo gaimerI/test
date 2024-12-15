@@ -31,7 +31,7 @@
                 <h2>
                   <button id="login-button">Login</button>
                 </h2>
-                  <form id="login-form">
+                <form id="login-form" style="display: none;">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username">
                         
@@ -39,7 +39,11 @@
                     <input type="password" id="password" name="password">
                         
                     <input type="submit" value="Login">
-                  </form>
+                </form>
+                <div id="user-overview" style="display: none;">
+                    <h3>Welcome, <span id="user-name"></span>!</h3>
+                    <button id="logout-button">Logout</button>
+                </div>
             </div>
         </div>
     </main>
