@@ -57,29 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // View topic
     window.viewTopic = function (index) {
-        const topic = topics[index];
-        const topicDetails = `
-            <h2>${topic.title}</h2>
-            <p>${topic.content}</p>
-            <hr>
-            <i>Author: ${topic.author}</i>
-            <h3>Comments</h3>
-            <ul id="comment-list"></ul>
-        `;
-        const modalContent = `
-            <div class="modal">
-                <div class="modal-content">
-                    ${topicDetails}
-                    <button onclick="closeModal()">Close</button>
-                </div>
+    const topic = topics[index];
+    const topicDetails = `
+        <h2>${topic.title}</h2>
+        <p>${topic.content}</p>
+        <hr>
+        <i>Author: ${topic.author}</i>
+        <h3>Comments</h3>
+        <ul id="comment-list"></ul>
+    `;
+    const commentList = topic.comments.map(
+        (comment) => `<li><strong>${comment.author}:</strong> ${comment.content}</li>`
+    ).join("");
+    
+    // Show topic and comments in a modal or a new section
+    const modalContent = `
+        <div class="modal">
+            <div class="modal-content">
+                ${topicDetails}
+                ${commentList ? commentList : "<p>No comments yet.</p>"}
+                <button onclick="closeModal()">Close</button>
             </div>
-        `;
+        </div>
+    `;
 
-        const modal = document.createElement("div");
-        modal.innerHTML = modalContent;
-        document.body.appendChild(modal);
-    };
-
+    // Append modal to the body
+    const modal = document.createElement("div");
+    modal.innerHTML = modalContent;
+    document.body.appendChild(modal);
+};
     // Close modal
     window.closeModal = function () {
         const modal = document.querySelector(".modal");
