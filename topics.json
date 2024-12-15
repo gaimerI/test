@@ -18,5 +18,10 @@
         "title": "Sample Glyph",
         "content": "Here is a glyph: <span class=\"glyph glyph-shield-lock-add\"></span> and some text.",
         "author": "Admin"
+    },
+    {
+        "title": "Another post",
+        "content": "Does a long author name affect the buttons?
+        "author": "A_very_long_username_that_probably_fucks_up_buttons"
     }
 ]
