@@ -13,6 +13,6 @@
     },
     {
         "title": "Sample Glyph",
-        "content": "Here is a glyph: <span class=\"glyph-shield-lock-add\"></span> and some text."
+        "content": "Here is a glyph: <span class=\"glyph glyph-shield-lock-add\"></span> and some text."
     }
 ]
