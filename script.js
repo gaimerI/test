@@ -59,3 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load topics from JSON file
     fetchTopics();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loginButton = document.getElementById('login-button');
+    const loginForm = document.getElementById('login-form');
+
+    loginButton.addEventListener('click', () => {
+        // Toggle visibility of the login form
+        if (loginForm.style.display === 'none' || loginForm.style.display === '') {
+            loginForm.style.display = 'block';
+        } else {
+            loginForm.style.display = 'none';
+        }
+    });
+});
