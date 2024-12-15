@@ -144,3 +144,9 @@ footer {
   vertical-align: middle; /* Aligns it with the baseline of text */
   filter: invert(1);
 }
+
+.container {
+    column-count: 3;
+    column-width: 200px;
+    
+}
