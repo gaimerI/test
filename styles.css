@@ -128,3 +128,7 @@ footer {
 .glyph-delete {
     background-image: url('images/delete.png');
 }
+
+.glyph-login {
+    background-image: url('images/login.png');
+}
