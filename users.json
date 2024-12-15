@@ -1,14 +1,14 @@
 [
     {
         "username": "john_doe",
-        "password": "password123",
-        "email": "john@example.com",
-        "memberSince": "2022-01-01"
+        "password": "12345"
     },
     {
-        "username": "jane_doe",
-        "password": "securepass",
-        "email": "jane@example.com",
-        "memberSince": "2023-03-15"
+        "username": "jane_smith",
+        "password": "password"
+    },
+    {
+        "username": "admin",
+        "password": "admin123"
     }
 ]
