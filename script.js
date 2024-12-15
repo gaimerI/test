@@ -121,7 +121,7 @@ window.closeModal = function () {
             const user = users.find((u) => u.username === username && u.password === password);
             if (user) {
                 loginForm.style.display = 'none';
-                loginButton.style.diplay = 'none';
+                loginButton.style.display = 'none';
                 userOverview.style.display = 'block';
                 userNameDisplay.textContent = user.username;
             } else {
