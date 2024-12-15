@@ -80,7 +80,7 @@ footer {
 
 .column {
     flex: 1; /* Each column gets an equal width */
-    min-width: 200px;
+    min-width: 400px;
 }
 
 #topics {
