@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <i>${topic.author}</i>
                 <button onclick="viewTopic(${index})">View Topic</button>
                 <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
+                <button onclick="editTopic(${index})">Edit Topic</button>
+
             `;
             topicList.appendChild(li);
         });
@@ -129,3 +131,16 @@ function renderFilteredTopics(filteredTopics = topics) {
         topicList.appendChild(li);
     });
 }
+
+window.editTopic = function (index) {
+    const topic = topics[index];
+    topicTitle.value = topic.title;
+    topicContent.value = topic.content;
+    newTopicForm.addEventListener('submit', function updateTopic(e) {
+        e.preventDefault();
+        topic.title = topicTitle.value;
+        topic.content = topicContent.value;
+        renderTopics();
+        newTopicForm.removeEventListener('submit', updateTopic);
+    });
+};
