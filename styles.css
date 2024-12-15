@@ -37,7 +37,6 @@ input, textarea, button, input[type="submit"], input[type="reset"] {
     font-size: 1rem;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 button, input[type="submit"], input[type="reset"] {
@@ -61,7 +60,6 @@ button:hover {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     background: silver;
     color: white;
 }
