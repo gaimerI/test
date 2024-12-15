@@ -132,6 +132,10 @@ footer {
     background-image: url('images/login.png');
 }
 
+.glyph-search {
+    background-image: url('images/search.png');
+}
+
 #login-form {
     display: none; /* Initially hide the form */
 }
