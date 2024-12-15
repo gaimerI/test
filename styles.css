@@ -64,6 +64,7 @@ button:hover {
     border-radius: 4px;
     background: silver;
     color: white;
+    break-inside: avoid;
 }
 
 footer {
