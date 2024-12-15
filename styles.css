@@ -139,3 +139,7 @@ footer {
 #login-form {
     display: none; /* Initially hide the form */
 }
+
+iframe {
+    width: 400px;
+}
