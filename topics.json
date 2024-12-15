@@ -15,8 +15,8 @@
         "author": "Admin"
     },
     {
-        "title": "Sample Post",
-        "content": "Post with no meaning",
+        "title": "iFrame Test",
+        "content": "<iframe width="480" height="345" src="https://thisvid.com/embed/11909644/" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>",
         "author": "gaimerI17"
     },
     {
