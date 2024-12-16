@@ -4,21 +4,22 @@ body {
     margin: 0;
     padding: 0;
     background-color: gray;
-    color: darkslategrey;
+    color: lightslategrey;
 }
 
 header {
-    width: 1200px;
-    background-color: black;
+    background-color: grey;
     color: lightslategray;
     text-align: center;
     padding: 1rem;
+    width: 1500px;
 }
 
 main {
-    width: 1200px; /* Use the full width of the viewport */
+    max-width: 1500px;
+    margin: 20px auto;
     padding: 10px;
-    background: grey;
+    background: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -34,13 +35,14 @@ form {
     gap: 10px;
 }
 
-input, textarea, button, input[type="submit"], input[type="reset"] {
+input, textarea, button {
     font-size: 1rem;
     padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-button, input[type="submit"], input[type="reset"] {
+button {
     background-color: navy;
     color: white;
     cursor: pointer;
@@ -54,23 +56,23 @@ button:hover {
 #topic-list {
     list-style: none;
     padding: 0;
-    width: 400px;
 }
 
 #topic-list li {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 4px;
     background: silver;
     color: white;
 }
 
 footer {
-    width: 1200px; /* Use the full width of the viewport */
     text-align: center;
     padding: 1rem;
     background: black;
     color: white;
+    width: 1500px;
 }
 
 .container {
@@ -80,7 +82,7 @@ footer {
 
 .column {
     flex: 1; /* Each column gets an equal width */
-    min-width: 400px;
+    min-width: 500px;
 }
 
 #topics {
@@ -89,100 +91,4 @@ footer {
 
 #new-topic {
     margin-left: auto; /* Push create new topic to the right */
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative;
-}
-
-.modal-content h2 {
-    margin-top: 0;
-}
-
-.modal-content button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.modal-content button:hover {
-    background-color: #0056b3;
-}
-
-
-/* Reusable glyph base styles */
-.glyph {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    filter: invert(1); /* Ensures glyphs are visible on dark backgrounds */
-}
-
-/* Specific glyph styles */
-.glyph-person {
-    background-image: url('images/person.png');
-}
-
-.glyph-shield-add {
-    background-image: url('images/shield-add.png');
-}
-
-.glyph-shield-loading {
-    background-image: url('images/shield-loading.png');
-}
-
-.glyph-shield-lock {
-    background-image: url('images/shield-lock.png');
-}
-
-.glyph-shield-lock-add {
-    background-image: url('images/shield-lock-add.png');
-}
-
-.glyph-delete {
-    background-image: url('images/delete.png');
-}
-
-.glyph-login {
-    background-image: url('images/login.png');
-}
-
-.glyph-search {
-    background-image: url('images/search.png');
-}
-
-#login-form {
-    display: none; /* Initially hide the form */
-}
-
-iframe {
-    width: 380px;
 }
