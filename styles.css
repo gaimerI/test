@@ -52,15 +52,23 @@ body {
   width: 50%;
   padding: 20px;
   background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align content to the right */
 }
 
 .right-column h2 {
   margin-bottom: 20px;
+  align-self: flex-start; /* Keep headers aligned to the left */
+}
+
+#login-form, #settings {
+  width: 100%; /* Full width within the right column */
+  margin-bottom: 20px; /* Space between login and settings */
 }
 
 #login-form input {
   display: block;
-  float: right;
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 10px;
@@ -71,7 +79,6 @@ body {
 #login-form button {
   padding: 10px;
   width: 100%;
-  float: right;
   border: none;
   background: #28a745;
   color: #fff;
@@ -86,7 +93,6 @@ body {
 #settings button {
   padding: 10px;
   width: 100%;
-  float: right;
   border: none;
   background: #dc3545;
   color: #fff;
