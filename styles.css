@@ -7,13 +7,13 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: black;
+    color: #eaeaea;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: darkslategray;
+    color: #eaeaea;
     padding: 10px 20px;
     text-align: center;
 }
@@ -25,7 +25,7 @@ header {
 
 .sidebar {
     width: 25%;
-    background-color: #fff;
+    background-color: darkslategray;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -46,7 +46,7 @@ header {
 }
 
 .sidebar li:hover {
-    background-color: #efefef;
+    background-color: dimgray;
 }
 
 #new-topic-form input, #new-topic-form textarea {
@@ -60,21 +60,21 @@ header {
 #new-topic-form button {
     width: 100%;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: dimgray;
+    color: #eaeaea;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 #new-topic-form button:hover {
-    background-color: #555;
+    background-color: gray;
 }
 
 .main-content {
     width: 75%;
     padding: 20px;
-    background-color: #fff;
+    background-color: darkslategray;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -84,8 +84,8 @@ header {
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: darkslategray;
+    color: #eaeaea;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
