@@ -1,94 +1,96 @@
-/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: gray;
-    color: lightslategrey;
-}
-
-header {
-    background-color: grey;
-    color: lightslategray;
-    text-align: center;
-    padding: 1rem;
-    width: 1500px;
-}
-
-main {
-    max-width: 1500px;
-    margin: 20px auto;
-    padding: 10px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    margin: 0;
-    padding: 0.5rem 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-input, textarea, button {
-    font-size: 1rem;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background-color: navy;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: midnightblue;
-}
-
-#topic-list {
-    list-style: none;
-    padding: 0;
-}
-
-#topic-list li {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: silver;
-    color: white;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: black;
-    color: white;
-    width: 1500px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 .container {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  min-height: 100vh;
 }
 
-.column {
-    flex: 1; /* Each column gets an equal width */
-    min-width: 500px;
+/* Left Column */
+.left-column {
+  flex: 3;
+  padding: 20px;
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+}
+
+.left-column h2 {
+  margin-bottom: 20px;
 }
 
 #topics {
-    margin-right: auto; /* Push topics to the left */
+  margin-bottom: 20px;
 }
 
-#new-topic {
-    margin-left: auto; /* Push create new topic to the right */
+.add-topic input {
+  padding: 10px;
+  width: calc(100% - 110px);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-topic button {
+  padding: 10px;
+  width: 100px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-topic button:hover {
+  background: #0056b3;
+}
+
+/* Right Column */
+.right-column {
+  flex: 1;
+  padding: 20px;
+  background: #f7f7f7;
+}
+
+.right-column h2 {
+  margin-bottom: 20px;
+}
+
+#login-form input {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#login-form button {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #28a745;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#login-form button:hover {
+  background: #218838;
+}
+
+#settings button {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #dc3545;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#settings button:hover {
+  background: #c82333;
 }
