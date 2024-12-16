@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <i>${topic.author}</i>
                 <button onclick="pinTopic(${index})">Pin</button>
                 <button onclick="deleteTopic(${index})"><span class="glyph glyph-delete"></span></button>
-            `;
+                <button onclick="viewTopic(${index})">View Topic</button>
+                `;
             topicList.appendChild(li);
         });
     }
