@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <title>Simple Forum</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Forum</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Left Column: Topics -->
-    <div class="left-column">
-      <h2>Forum Topics</h2>
-      <div id="topics">
-      </div>
-      <div id="new-topic-form">
-        <input type="text" id="new-topic-title" placeholder="Enter topic title" />
-        <textarea id="new-topic-content" placeholder="Enter topic content"></textarea>
-        <button onclick="addTopic()">Add Topic</button>
-      </div>
-
-    <!-- Right Column: Login/Settings -->
-    <div class="right-column">
-      <h2>User Panel</h2>
-      <div id="user-panel">
-        <form id="login-form">
-          <input type="text" id="username" placeholder="Username" required />
-          <input type="password" id="password" placeholder="Password" required />
-          <button type="submit">Login</button>
-        </form>
-        <div id="settings" style="display: none;">
-          <p>Welcome, <span id="user-name"></span>!</p>
-          <button onclick="logout()">Logout</button>
+    <header>
+        <h1>Simple Forum</h1>
+    </header>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h2>Topics</h2>
+            <ul id="topic-list"></ul>
         </div>
-      </div>
+        
+        <div class="main-content">
+            <h2>Post Details</h2>
+            <div id="post-content">
+                <p>Select a topic to view details.</p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Simple Forum</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
