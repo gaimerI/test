@@ -70,3 +70,28 @@ window.onload = loadTopics;
 // Attach the event listener to the form
 const form = document.getElementById('new-topic-form');
 form.addEventListener('submit', addNewTopic);
+
+// Function to filter topics based on search input
+function filterTopics() {
+    const searchInput = document.getElementById('search-topic').value.toLowerCase();
+    const filteredTopics = topics.filter(topic =>
+        topic.title.toLowerCase().includes(searchInput)
+    );
+
+    displayFilteredTopics(filteredTopics);
+}
+
+function displayFilteredTopics(filteredTopics) {
+    const topicList = document.getElementById('topic-list');
+    topicList.innerHTML = '';
+
+    filteredTopics.forEach((topic, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = topic.title;
+        listItem.onclick = () => loadPostContent(index);
+        topicList.appendChild(listItem);
+    });
+}
+
+// Attach search listener
+document.getElementById('search-topic').addEventListener('input', filterTopics);
