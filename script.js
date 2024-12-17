@@ -52,10 +52,9 @@ function addNewTopic(event) {
         title,
         content,
         author,
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleString(),
 
         topics.push(newTopic);
-        saveTopicsToLocalStorage();
         displayTopics();
 
         // Clear the form fields
