@@ -8,5 +8,15 @@
         "title": "JavaScript Tips and Tricks",
         "content": "Share your favorite JavaScript tips or ask for advice here.",
         "author": "Admin"
+    },
+    {
+        "title": "HTML Test",
+        "content": " <strong>Bold text</strong>\n <a href="https://thisvid.com">Hyperlink<a>\n <s>Strikethrough text</s>\n <u>Underlined text</u>",
+        "author": "Admin"
+    },
+    {
+        "title": "JavaScript Tips and Tricks",
+        "content": "Share your favorite JavaScript tips or ask for advice here.",
+        "author": "Admin"
     }
 ]
