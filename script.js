@@ -32,8 +32,8 @@ function loadPostContent(index) {
     const topic = topics[index];
     postContent.innerHTML = `
         <h3>${topic.title}</h3>
-        <p><strong>Author:</strong> ${topic.author}</p>
-        <p><strong>Posted on:</strong> ${topic.timestamp}</p>
+        <p><span class="glyph glyph-person"></span> ${topic.author}</p>
+        <p><span class="glyph glyph-date"></span> ${topic.timestamp}</p>
         <p>${topic.content}</p>
     `;
 }
