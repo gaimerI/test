@@ -2,31 +2,11 @@
     {
         "title": "About the Forum",
         "content": "Feel free to introduce yourself and get to know other members.",
-        "author": "Admin",
-        "comments": [
-            {
-                "author": "User1",
-                "content": "Hello everyone! I'm excited to be here."
-            },
-            {
-                "author": "User2",
-                "content": "Looking forward to connecting with you all!"
-            }
-        ]
+        "author": "Admin"
     },
     {
         "title": "JavaScript Tips and Tricks",
         "content": "Share your favorite JavaScript tips or ask for advice here.",
-        "author": "Admin",
-        "comments": [
-            {
-                "author": "User3",
-                "content": "I love using arrow functions for cleaner code!"
-            },
-            {
-                "author": "User4",
-                "content": "Can anyone recommend a good resource for learning async/await?"
-            }
-        ]
+        "author": "Admin"
     }
 ]
