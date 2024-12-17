@@ -90,3 +90,20 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+
+a:link {
+    color: goldenrod;
+}
+
+a:visited {
+    color: khaki;
+}
+
+a:hover {
+    color: peru;
+}
+
+a:active {
+    color: saddlebrown;
+}
+    
