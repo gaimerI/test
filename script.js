@@ -33,8 +33,10 @@ function loadPostContent(index) {
     postContent.innerHTML = `
         <h3>${topic.title}</h3>
         <p><strong>Author:</strong> ${topic.author}</p>
+        <p><strong>Posted on:</strong> ${topic.timestamp}</p>
         <p>${topic.content}</p>
-    `;
+`;
+
 }
 
 // Function to add a new topic to the forum
@@ -46,14 +48,15 @@ function addNewTopic(event) {
     const author = document.getElementById('new-topic-author').value;
 
     if (title && content && author) {
-        const newTopic = {
-            title,
-            content,
-            author
-        };
+    const newTopic = {
+        title,
+        content,
+        author,
+        timestamp: new Date().toLocaleString()
 
-        topics.push(newTopic); // Add new topic to the global array
-        displayTopics(); // Re-render the topic list in the sidebar
+        topics.push(newTopic);
+        saveTopicsToLocalStorage();
+        displayTopics();
 
         // Clear the form fields
         document.getElementById('new-topic-title').value = '';
