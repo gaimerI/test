@@ -122,6 +122,7 @@ a:active {
   background-repeat: no-repeat; /* Prevents tiling */
   background-position: center; /* Centers the image */
   vertical-align: middle; /* Aligns it with the baseline of text */
+  filter: invert(1);
 }
 
 .glyph-person {
