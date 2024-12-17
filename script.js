@@ -35,8 +35,7 @@ function loadPostContent(index) {
         <p><strong>Author:</strong> ${topic.author}</p>
         <p><strong>Posted on:</strong> ${topic.timestamp}</p>
         <p>${topic.content}</p>
-`;
-
+    `;
 }
 
 // Function to add a new topic to the forum
@@ -48,13 +47,14 @@ function addNewTopic(event) {
     const author = document.getElementById('new-topic-author').value;
 
     if (title && content && author) {
-    const newTopic = {
-        title,
-        content,
-        author,
-        timestamp: new Date().toLocaleString(),
+        const newTopic = {
+            title,
+            content,
+            author,
+            timestamp: new Date().toLocaleString(),
+        };
 
-        topics.push(newTopic);
+        topics.push(newTopic); // Corrected this line
         displayTopics();
 
         // Clear the form fields
@@ -90,7 +90,10 @@ function displayFilteredTopics(filteredTopics) {
     filteredTopics.forEach((topic, index) => {
         const listItem = document.createElement('li');
         listItem.textContent = topic.title;
-        listItem.onclick = () => loadPostContent(index);
+        listItem.onclick = () => {
+            const originalIndex = topics.indexOf(topic); // Get the original index
+            loadPostContent(originalIndex);
+        };
         topicList.appendChild(listItem);
     });
 }
