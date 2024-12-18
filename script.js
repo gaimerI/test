@@ -15,6 +15,12 @@ async function loadTopics() {
 
 // Function to display topics in the sidebar
 function displayTopics() {
+    if (currentUser?.rank === "banned") {
+        document.getElementById('post-content').innerHTML = "<p>You are banned from viewing topics.</p>";
+        document.getElementById('topic-list').innerHTML = "";
+        return;
+    }
+
     const topicList = document.getElementById('topic-list');
     topicList.innerHTML = ''; // Clear any existing list items
 
@@ -28,11 +34,16 @@ function displayTopics() {
 
 // Function to display the selected post content
 function loadPostContent(index) {
+    if (currentUser?.rank === "banned") {
+        document.getElementById('post-content').innerHTML = "<p>You are banned from viewing topics.</p>";
+        return;
+    }
+
     const postContent = document.getElementById('post-content');
     const topic = topics[index];
     postContent.innerHTML = `
         <h3>${topic.title}</h3>
-        <p><span class="glyph glyph-person"></span> ${topic.author}</p>
+        <p><span class="glyph glyph-person"></span> ${topic.author} (${topic.rank || "member"})</p>
         <p><span class="glyph glyph-date"></span> ${topic.timestamp}</p>
         <p>${topic.content}</p>
     `;
@@ -51,6 +62,7 @@ function addNewTopic(event) {
             title,
             content,
             author,
+            rank: currentUser.rank || "member",
             timestamp: new Date().toLocaleString(),
         };
 
@@ -75,6 +87,11 @@ form.addEventListener('submit', addNewTopic);
 
 // Function to filter topics based on search input
 function filterTopics() {
+    if (currentUser?.rank === "banned") {
+        document.getElementById('post-content').innerHTML = "<p>You are banned from viewing topics.</p>";
+        return;
+    }
+
     const searchInput = document.getElementById('search-topic').value.toLowerCase();
     const filteredTopics = topics.filter(topic =>
         topic.title.toLowerCase().includes(searchInput)
@@ -142,7 +159,8 @@ async function handleLogin(event) {
         document.getElementById('logout-btn').style.display = 'inline';
         document.getElementById('new-topic-author').value = user.username;
         document.getElementById('new-topic-author').disabled = true;
-        document.getElementById('submit-topic').disabled = false;
+        document.getElementById('submit-topic').disabled = user.rank === "banned";
+        displayTopics();
         closeLoginModal();
     } else {
         alert('Invalid username or password.');
@@ -158,6 +176,7 @@ function handleLogout() {
     document.getElementById('new-topic-author').value = '';
     document.getElementById('new-topic-author').disabled = true;
     document.getElementById('submit-topic').disabled = true;
+    displayTopics();
 }
 
 // Event listeners
