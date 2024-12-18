@@ -145,3 +145,15 @@ a:active {
   background-image: url('images/gavel.png'); /* Replace with your image URL */
 }
 
+.glyph-info {
+  background-image: url('images/info.png'); /* Replace with your image URL */
+}
+
+.glyph-contact {
+  background-image: url('images/contact.png'); /* Replace with your image URL */
+}
+
+.glyph-shield-security {
+  background-image: url('images/shield-security.png'); /* Replace with your image URL */
+}
+
