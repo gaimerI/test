@@ -38,19 +38,25 @@
     
     <div class="container">
         <div class="sidebar">
-            <h2>Topics</h2>
-            <label for="search-topic"><span class="glyph glyph-search"></span></label>
-            <input type="text" id="search-topic" />
-            
-            <ul id="topic-list"></ul>
-            <h3>Add New Topic</h3>
-            <form id="new-topic-form">
-                <input type="text" id="new-topic-title" placeholder="Topic Title" required />
-                <textarea id="new-topic-content" placeholder="Write the topic content..." required></textarea>
-                <input type="hidden" id="new-topic-author" required disabled</input>
-                <button type="submit" id="submit-topic" disabled>Add Topic</button>
-            </form>
-        </div>
+    <h2>Topics</h2>
+    <label for="search-topic"><span class="glyph glyph-search"></span></label>
+    <input type="text" id="search-topic" />
+
+    <ul id="topic-list"></ul>
+
+    <h3>Add New Topic</h3>
+    <form id="new-topic-form">
+        <input type="text" id="new-topic-title" placeholder="Topic Title" required />
+        <textarea id="new-topic-content" placeholder="Write the topic content..." required></textarea>
+        <input type="hidden" id="new-topic-author" required disabled />
+        <button type="submit" id="submit-topic" disabled>Add Topic</button>
+    </form>
+    
+    <h2>Groups</h2>
+    <ul id="group-list"></ul>
+
+</div>
+
         
         <div class="main-content">
             <h2>Post Details</h2>
