@@ -60,16 +60,17 @@ function loadPostContent(index) {
 
     let rankIcon;
     switch (topic.rank?.toLowerCase()) {
-        case 'admin':
-            rankIcon = '<span class="glyph glyph-shield-security" onclick="alert('Hello')"></span>';
-            break;
-        case 'banned':
-            rankIcon = '<span class="glyph glyph-shield-cross"></span>';
-            break;
-        default: // Default to "Member" if rank is missing or not specified
-            rankIcon = '<span class="glyph glyph-shield-person"></span>';
-            break;
-    }
+    case 'admin':
+        rankIcon = '<span class="glyph glyph-shield-security" onclick="alert("Hello")"></span>';
+        break;
+    case 'banned':
+        rankIcon = '<span class="glyph glyph-shield-cross"></span>';
+        break;
+    default: // Default to "Member" if rank is missing or not specified
+        rankIcon = '<span class="glyph glyph-shield-person"></span>';
+        break;
+}
+
 
     postContent.innerHTML = `
         <h3>${topic.title}</h3>
