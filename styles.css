@@ -158,3 +158,28 @@ a:active {
   background-image: url('images/shield-security.png'); /* Replace with your image URL */
 }
 
+#login-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#login-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-modal label {
+    margin-top: 10px;
+}
+
+#login-modal button {
+    margin-top: 20px;
+}
