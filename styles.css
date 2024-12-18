@@ -158,6 +158,14 @@ a:active {
   background-image: url('images/shield-security.png'); /* Replace with your image URL */
 }
 
+.glyph-login {
+  background-image: url('images/login.png'); /* Replace with your image URL */
+}
+
+.glyph-logout {
+  background-image: url('images/logout.png'); /* Replace with your image URL */
+}
+
 #login-modal {
     position: fixed;
     top: 50%;
