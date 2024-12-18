@@ -2,16 +2,16 @@
     {
         "name": "Technology Enthusiasts",
         "description": "Discuss the latest in tech.",
-        "members": []
+        "members": ["admin"]
     },
     {
         "name": "Book Club",
         "description": "Share your favorite books and reviews.",
-        "members": []
+        "members": ["admin"]
     },
     {
         "name": "Fitness Gurus",
         "description": "Talk about workouts and healthy living.",
-        "members": []
+        "members": ["john_doe"]
     }
 ]
