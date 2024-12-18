@@ -137,3 +137,11 @@ a:active {
   background-image: url('images/search.png'); /* Replace with your image URL */
 }
 
+.glyph-home {
+  background-image: url('images/home.png'); /* Replace with your image URL */
+}
+
+.glyph-gavel {
+  background-image: url('images/gavel.png'); /* Replace with your image URL */
+}
+
