@@ -100,3 +100,68 @@ function displayFilteredTopics(filteredTopics) {
 
 // Attach search listener
 document.getElementById('search-topic').addEventListener('input', filterTopics);
+
+// Fetch users for login
+let currentUser = null;
+
+async function fetchUsers() {
+    try {
+        const response = await fetch('users.json');
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        return [];
+    }
+}
+
+// Show login modal
+function showLoginModal() {
+    document.getElementById('login-modal').style.display = 'block';
+}
+
+// Close login modal
+function closeLoginModal() {
+    document.getElementById('login-modal').style.display = 'none';
+}
+
+// Handle login
+async function handleLogin(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    const users = await fetchUsers();
+
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
+        currentUser = user;
+        document.getElementById('user-greeting').style.display = 'inline';
+        document.getElementById('username').textContent = user.username;
+        document.getElementById('login-btn').style.display = 'none';
+        document.getElementById('logout-btn').style.display = 'inline';
+        document.getElementById('new-topic-author').value = user.username;
+        document.getElementById('new-topic-author').disabled = true;
+        document.getElementById('submit-topic').disabled = false;
+        closeLoginModal();
+    } else {
+        alert('Invalid username or password.');
+    }
+}
+
+// Handle logout
+function handleLogout() {
+    currentUser = null;
+    document.getElementById('user-greeting').style.display = 'none';
+    document.getElementById('login-btn').style.display = 'inline';
+    document.getElementById('logout-btn').style.display = 'none';
+    document.getElementById('new-topic-author').value = '';
+    document.getElementById('new-topic-author').disabled = true;
+    document.getElementById('submit-topic').disabled = true;
+}
+
+// Event listeners
+document.getElementById('login-btn').addEventListener('click', showLoginModal);
+document.getElementById('close-login-modal').addEventListener('click', closeLoginModal);
+document.getElementById('login-form').addEventListener('submit', handleLogin);
+document.getElementById('logout-btn').addEventListener('click', handleLogout);
