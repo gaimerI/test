@@ -3,18 +3,21 @@
         "title": "About the Forum",
         "content": "Feel free to introduce yourself and get to know other members.",
         "author": "admin",
-        "timestamp": "Unknown"
+        "timestamp": "Unknown",
+        "rank": "admin"
     },
     {
         "title": "JavaScript Tips and Tricks",
         "content": "Share your favorite JavaScript tips or ask for advice here.",
         "author": "john_doe",
-        "timestamp": "Unknown"
+        "timestamp": "Unknown",
+        "rank": "member"
     },
     {
         "title": "HTML Test",
         "content": " <strong>Bold text</strong>\n <a href=\"https://thisvid.com\">Hyperlink<a>\n <s>Strikethrough text</s>\n <u>Underlined text</u>",
         "author": "jane_smith",
-        "timestamp": "Unknown"
+        "timestamp": "Unknown",
+        "rank": "banned"
     }
 ]
