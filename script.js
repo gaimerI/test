@@ -96,7 +96,7 @@ function addNewTopic(event) {
             timestamp: new Date().toLocaleString(),
         };
 
-        topics.push(newTopic);
+        topics.push(newTopic); // Corrected this line
         displayTopics();
 
         // Clear the form fields
@@ -152,16 +152,42 @@ function displayGroups() {
     groups.forEach((group, index) => {
         const listItem = document.createElement('li');
         listItem.textContent = group.name;
-        listItem.onclick = () => joinGroup(index);
+        listItem.onclick = () => loadGroupContent(index); // Show group details on click
         groupList.appendChild(listItem);
     });
+}
+
+// Function to display group details
+function loadGroupContent(index) {
+    const postContent = document.getElementById('post-content');
+    const group = groups[index];
+
+    const memberList = group.members.map(member => `<li>${member}</li>`).join('');
+
+    postContent.innerHTML = `
+        <h3>${group.name}</h3>
+        <p>${group.description}</p>
+        <h4>Members:</h4>
+        <ul id="group-members">${memberList || "<li>No members yet.</li>"}</ul>
+        <button id="join-group-btn">Join Group</button>
+    `;
+
+    // Attach event listener for "Join Group" button
+    document.getElementById('join-group-btn').onclick = () => joinGroup(index);
 }
 
 // Function to handle joining a group
 function joinGroup(index) {
     const group = groups[index];
+    const postContent = document.getElementById('post-content');
+
     if (!group.members.includes(currentUser.username)) {
         group.members.push(currentUser.username);
+
+        // Update the member list in the displayed group details
+        const memberList = group.members.map(member => `<li>${member}</li>`).join('');
+        document.getElementById('group-members').innerHTML = memberList;
+
         alert(`You have joined the group: ${group.name}`);
     } else {
         alert(`You are already a member of the group: ${group.name}`);
@@ -229,7 +255,7 @@ function handleLogout() {
     displayGroups();
 }
 
-// Attach event listeners
+// Event listeners
 document.getElementById('login-btn').addEventListener('click', showLoginModal);
 document.getElementById('close-login-modal').addEventListener('click', closeLoginModal);
 document.getElementById('login-form').addEventListener('submit', handleLogin);
@@ -237,8 +263,8 @@ document.getElementById('logout-btn').addEventListener('click', handleLogout);
 document.getElementById('new-topic-form').addEventListener('submit', addNewTopic);
 document.getElementById('search-topic').addEventListener('input', filterTopics);
 
-// Call the functions to load initial data when the page loads
-window.onload = () => {
+// Initialize the forum
+window.onload = function() {
     loadTopics();
     loadGroups();
 };
