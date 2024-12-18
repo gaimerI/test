@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Technology Enthusiasts",
+        "description": "Discuss the latest in tech.",
+        "members": []
+    },
+    {
+        "name": "Book Club",
+        "description": "Share your favorite books and reviews.",
+        "members": []
+    },
+    {
+        "name": "Fitness Gurus",
+        "description": "Talk about workouts and healthy living.",
+        "members": []
+    }
+]
