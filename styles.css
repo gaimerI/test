@@ -171,7 +171,7 @@ a:active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #333;
+    background-color: darkslategray;
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -184,10 +184,7 @@ a:active {
     flex-direction: column;
 }
 
-#login-modal label {
-    margin-top: 10px;
-}
-
 #login-modal button {
+    background-color: dimgray;
     margin-top: 20px;
 }
