@@ -40,14 +40,28 @@ function loadPostContent(index) {
     }
 
     const postContent = document.getElementById('post-content');
-    const topic = topics[index];
-    postContent.innerHTML = `
-        <h3>${topic.title}</h3>
-        <p><span class="glyph glyph-person"></span> ${topic.author} (${topic.rank || "member"})</p>
-        <p><span class="glyph glyph-date"></span> ${topic.timestamp}</p>
-        <p>${topic.content}</p>
-    `;
+const topic = topics[index];
+
+let rankIcon;
+switch (topic.rank?.toLowerCase()) {
+    case 'admin':
+        rankIcon = '<span class="glyph glyph-shield-security"></span>';
+        break;
+    case 'banned':
+        rankIcon = '<span class="glyph glyph-shield-cross"></span>';
+        break;
+    default: // Default to "Member" if rank is missing or not specified
+        rankIcon = '<span class="glyph glyph-shield-person"></span>';
+        break;
 }
+
+postContent.innerHTML = `
+    <h3>${topic.title}</h3>
+    <p><span class="glyph glyph-person"></span> ${topic.author} ${rankIcon}</p>
+    <p><span class="glyph glyph-date"></span> ${topic.timestamp}</p>
+    <p>${topic.content}</p>
+`;
+
 
 // Function to add a new topic to the forum
 function addNewTopic(event) {
