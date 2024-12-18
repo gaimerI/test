@@ -61,7 +61,7 @@ function loadPostContent(index) {
     let rankIcon;
     switch (topic.rank?.toLowerCase()) {
         case 'admin':
-            rankIcon = '<span class="glyph glyph-shield-security"></span>';
+            rankIcon = '<span class="glyph glyph-shield-security" onclick="alert("Hello")"></span>';
             break;
         case 'banned':
             rankIcon = '<span class="glyph glyph-shield-cross"></span>';
