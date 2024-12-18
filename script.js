@@ -61,13 +61,13 @@ function loadPostContent(index) {
     let rankIcon;
     switch (topic.rank?.toLowerCase()) {
     case 'admin':
-        rankIcon = '<span class="glyph glyph-shield-security" onclick="alert(\'Hello\')"></span>';
+        rankIcon = '<span class="glyph glyph-shield-security" onclick="alert(\'Tämä käyttäjä on admini, hänellä on kaikki mahdolliset oikeudet.\')"></span>';
         break;
     case 'banned':
-        rankIcon = '<span class="glyph glyph-shield-cross"></span>';
+        rankIcon = '<span class="glyph glyph-shield-cross" onclick="alert(\'Tämä käyttäjä on bännätty; hänellä ei ole enää mitään oikeuksia.\')"></span>';
         break;
     default: // Default to "Member" if rank is missing or not specified
-        rankIcon = '<span class="glyph glyph-shield-person"></span>';
+        rankIcon = '<span class="glyph glyph-shield-person" onclick="alert(\'Tämä käyttäjä on ihan tavallinen käyttäjä; ilman sen ihmeempiä.\')"></span>';
         break;
 }
 
