@@ -1,23 +1,16 @@
 [
     {
-        "title": "Mikä tämä paikka on?",
-        "content": "Feel free to introduce yourself and get to know other members.",
+        "title": "Mikä tää paikka on?",
+        "content": "Tämä paikka on yksinkertaisuudessaan foorumi. Vieläpä yksityinen sellainen.",
         "author": "admin",
         "timestamp": "Unknown",
         "rank": "admin"
     },
     {
-        "title": "JavaScript Tips and Tricks",
-        "content": "Share your favorite JavaScript tips or ask for advice here.",
-        "author": "john_doe",
+        "title": "Mitä ryhmät on?",
+        "content": "Ryhmissä voi keskustella hieman yksityisemmin. Perinteisissä postauksissa kaikki näkee kaikkien kommentit, mutta ryhmän kommentit näkevät vain sen jäsenet.",
+        "author": "admin",
         "timestamp": "Unknown",
         "rank": "member"
-    },
-    {
-        "title": "HTML Test",
-        "content": " <strong>Bold text</strong>\n <a href=\"https://thisvid.com\">Hyperlink<a>\n <s>Strikethrough text</s>\n <u>Underlined text</u>",
-        "author": "jane_smith",
-        "timestamp": "Unknown",
-        "rank": "banned"
     }
 ]
