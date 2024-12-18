@@ -1,14 +1,17 @@
 [
     {
         "username": "john_doe",
-        "password": "12345"
+        "password": "12345",
+        "rank": "user"
     },
     {
         "username": "jane_smith",
-        "password": "password"
+        "password": "password",
+        "rank": "banned"
     },
     {
         "username": "admin",
-        "password": "admin123"
+        "password": "admin123",
+        "rank": "admin"
     }
 ]
