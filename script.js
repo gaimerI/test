@@ -61,7 +61,7 @@ postContent.innerHTML = `
     <p><span class="glyph glyph-date"></span> ${topic.timestamp}</p>
     <p>${topic.content}</p>
 `;
-
+}
 
 // Function to add a new topic to the forum
 function addNewTopic(event) {
