@@ -111,6 +111,7 @@ a:active {
         nav {
             background-color: darkslategray;
             overflow: hidden;
+            font-size: 32px;
         }
 
 
