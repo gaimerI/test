@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Simple Forum</title>
+    <title>Simple Forum with Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Simple Forum</h1>
-        <h6>A place for discuss</h6>
+        <h6>A place for discussion</h6>
         <nav>
             <a href="/test"><span class="glyph glyph-home"></span></a>
             <a href="/test/rules"><span class="glyph glyph-gavel"></span></a>
@@ -17,20 +16,38 @@
             <a href="/test/contact"><span class="glyph glyph-contact"></span></a>
             <a href="/test/trash"><span class="glyph glyph-shield-security"></span></a>
         </nav>
+        <div id="user-status">
+            <button id="login-btn">Login</button>
+            <span id="user-greeting" style="display: none;">Welcome, <span id="username"></span>!</span>
+            <button id="logout-btn" style="display: none;">Logout</button>
+        </div>
     </header>
+    
+    <div id="login-modal" style="display: none;">
+        <form id="login-form">
+            <h2>Login</h2>
+            <label for="username">Username</label>
+            <input type="text" id="login-username" required />
+            <label for="password">Password</label>
+            <input type="password" id="login-password" required />
+            <button type="submit">Login</button>
+            <button type="button" id="close-login-modal">Close</button>
+        </form>
+    </div>
     
     <div class="container">
         <div class="sidebar">
             <h2>Topics</h2>
-            <label for="search-topic"><span class="glyph glyph-search"></span></label> <input type="text" id="search-topic" />
+            <label for="search-topic"><span class="glyph glyph-search"></span></label>
+            <input type="text" id="search-topic" />
             
             <ul id="topic-list"></ul>
             <h3>Add New Topic</h3>
             <form id="new-topic-form">
                 <input type="text" id="new-topic-title" placeholder="Topic Title" required />
                 <textarea id="new-topic-content" placeholder="Write the topic content..." required></textarea>
-                <input type="text" id="new-topic-author" placeholder="Author" required />
-                <button type="submit">Add Topic</button>
+                <input type="text" id="new-topic-author" placeholder="Author" required disabled />
+                <button type="submit" id="submit-topic" disabled>Add Topic</button>
             </form>
         </div>
         
