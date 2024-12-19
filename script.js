@@ -164,18 +164,25 @@ function loadGroupContent(index) {
     const group = groups[index];
 
     const memberList = group.members.map(member => `<li>${member}</li>`).join('');
+    const isOwner = currentUser.username === group.owner;
 
     postContent.innerHTML = `
         <h3>${group.name}</h3>
         <p>${group.description}</p>
+        <p><strong>Owner:</strong> ${group.owner}</p>
         <h4>Members:</h4>
         <ul id="group-members">${memberList || "<li>No members yet.</li>"}</ul>
         <button id="join-group-btn">Join Group</button>
+        ${isOwner ? '' : '<button id="leave-group-btn">Leave Group</button>'}
     `;
 
-    // Attach event listener for "Join Group" button
+    // Attach event listeners for "Join Group" and "Leave Group" buttons
     document.getElementById('join-group-btn').onclick = () => joinGroup(index);
+    if (!isOwner) {
+        document.getElementById('leave-group-btn').onclick = () => leaveGroup(index);
+    }
 }
+
 
 // Function to handle joining a group
 function joinGroup(index) {
@@ -269,3 +276,52 @@ window.onload = function() {
     loadTopics();
     loadGroups();
 };
+// Function to create a new group
+function createNewGroup(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const groupName = document.getElementById('new-group-name').value;
+    const groupDescription = document.getElementById('new-group-description').value;
+
+    if (groupName && groupDescription && currentUser) {
+        const newGroup = {
+            name: groupName,
+            description: groupDescription,
+            owner: currentUser.username, // Set the creator as the owner
+            members: [currentUser.username], // Add the creator to the member list
+        };
+
+        groups.push(newGroup);
+        displayGroups();
+
+        // Clear the form fields
+        document.getElementById('new-group-name').value = '';
+        document.getElementById('new-group-description').value = '';
+
+        alert(`Group "${groupName}" created successfully!`);
+    } else {
+        alert('Please provide a group name and description.');
+    }
+}
+
+// Function to handle leaving a group
+function leaveGroup(index) {
+    const group = groups[index];
+
+    if (group.members.includes(currentUser.username)) {
+        // Remove the current user from the group members
+        group.members = group.members.filter(member => member !== currentUser.username);
+
+        // Update the member list in the displayed group details
+        const memberList = group.members.map(member => `<li>${member}</li>`).join('');
+        document.getElementById('group-members').innerHTML = memberList || "<li>No members yet.</li>";
+
+        alert(`You have left the group: ${group.name}`);
+    } else {
+        alert(`You are not a member of the group: ${group.name}`);
+    }
+}
+
+// Enhanced function to display group details
+// Add event listener for the new group form
+document.getElementById('new-group-form').addEventListener('submit', createNewGroup);
